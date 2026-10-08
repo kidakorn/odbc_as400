@@ -81,7 +81,9 @@ Error response:
 
 Status codes: 400 bad input, 404 unknown route, 500 unexpected error (generic message in production), 503 database unavailable.
 
-To add an endpoint, add an entry to `src/endpoints/endpoints.json`. Each `:name` in `sqlTemplate` must be declared in `params`. The server validates the file at startup and refuses to start if the config is invalid.
+Full API reference: [docs/API.md](docs/API.md).
+
+To add, edit, or remove an endpoint, use the endpoint manager (`npm run endpoints -- add --file <def.json>`, see [docs/ENDPOINT-MANAGER.md](docs/ENDPOINT-MANAGER.md)), or edit `src/endpoints/endpoints.json` directly. Each `:name` in `sqlTemplate` must be declared in `params`. The server validates the file at startup and refuses to start if the config is invalid.
 
 ## Manual checks (curl)
 
@@ -161,5 +163,9 @@ src/controllers/endpointController.js  handler factory
 src/routes/index.js           route registration and health check
 src/middleware/errorHandler.js notFound and error handler
 src/utils/AppError.js         operational error class
+scripts/endpoint-manager.js   CLI to list, add, update, remove endpoints
+docs/API.md                   API reference
+docs/ENDPOINT-MANAGER.md      endpoint manager guide
 test/logic.test.js            node:test unit tests
+test/endpoint-manager.test.js endpoint manager tests
 ```
