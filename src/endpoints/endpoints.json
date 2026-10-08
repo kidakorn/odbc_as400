@@ -1,0 +1,18 @@
+[
+  {
+    "id": "mdvice-by-key",
+    "path": "/api/web/services/MDVICE",
+    "description": "Get device master record by device code",
+    "sqlTemplate": "SELECT * FROM MDVICE WHERE CDDEVC = :cddevc",
+    "params": [
+      { "name": "cddevc", "required": true, "maxLength": 10 }
+    ]
+  },
+  {
+    "id": "wgpgbl-all",
+    "path": "/api/web/services/WGPGBL",
+    "description": "Get all global setting/branch rows",
+    "sqlTemplate": "SELECT * FROM WGPGBL",
+    "params": []
+  }
+]

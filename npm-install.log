@@ -1,0 +1,203 @@
+npm warn cleanup Failed to remove some directories [
+npm warn cleanup   [
+npm warn cleanup     '\\\\?\\d:\\I.KIDAKORN\\vscode\\odbc_as400\\node_modules\\math-intrinsics',
+npm warn cleanup     [Error: EBUSY: resource busy or locked, rmdir 'd:\I.KIDAKORN\vscode\odbc_as400\node_modules\math-intrinsics'] {
+npm warn cleanup       errno: -4082,
+npm warn cleanup       code: 'EBUSY',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'd:\\I.KIDAKORN\\vscode\\odbc_as400\\node_modules\\math-intrinsics'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     '\\\\?\\d:\\I.KIDAKORN\\vscode\\odbc_as400\\node_modules',
+npm warn cleanup     [Error: EBUSY: resource busy or locked, rmdir 'd:\I.KIDAKORN\vscode\odbc_as400\node_modules\math-intrinsics'] {
+npm warn cleanup       errno: -4082,
+npm warn cleanup       code: 'EBUSY',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'd:\\I.KIDAKORN\\vscode\\odbc_as400\\node_modules\\math-intrinsics'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     '\\\\?\\d:\\I.KIDAKORN\\vscode\\odbc_as400\\node_modules\\qs',
+npm warn cleanup     [Error: EBUSY: resource busy or locked, rmdir 'd:\I.KIDAKORN\vscode\odbc_as400\node_modules\qs'] {
+npm warn cleanup       errno: -4082,
+npm warn cleanup       code: 'EBUSY',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'd:\\I.KIDAKORN\\vscode\\odbc_as400\\node_modules\\qs'
+npm warn cleanup     }
+npm warn cleanup   ]
+npm warn cleanup ]
+npm error code 1
+npm error path d:\I.KIDAKORN\vscode\odbc_as400\node_modules\odbc
+npm error command failed
+npm error command C:\windows\system32\cmd.exe /d /s /c node-pre-gyp install --fallback-to-build
+npm error Failed to execute 'C:\Program Files\nodejs\node.exe C:\Users\kidakorn.i\AppData\Roaming\npm\node_modules\npm\node_modules\node-gyp\bin\node-gyp.js configure --fallback-to-build --module=d:\I.KIDAKORN\vscode\odbc_as400\node_modules\odbc\lib\bindings\napi-v8\odbc.node --module_name=odbc --module_path=d:\I.KIDAKORN\vscode\odbc_as400\node_modules\odbc\lib\bindings\napi-v8 --napi_version=10 --node_abi_napi=napi --napi_build_version=8 --node_napi_label=napi-v8' (1)
+npm error [info] it worked if it ends with ok
+npm error [info] using node-pre-gyp@2.0.3
+npm error [info] using node@24.12.0 | win32 | x64 
+npm error [info] check checked for "d:\I.KIDAKORN\vscode\odbc_as400\node_modules\odbc\lib\bindings\napi-v8\odbc.node" (not found)
+npm error [log] GET https://github.com/IBM/node-odbc/releases/download/v2.6.0/odbc-v2.6.0-win32-x64-napi-v8.tar.gz
+npm error [error] install request to https://release-assets.githubusercontent.com/github-production-release-asset/146304236/***?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-08T03%3A39%3A14Z&rscd=attachment%3B+filename%3Dodbc-v2.6.0-win32-x64-napi-v8.tar.gz&rsct=application%2Foctet-stream&skoid=***&sktid=***&skt=2026-10-08T02%3A38%3A57Z&ske=2026-10-08T03%3A39%3A14Z&sks=b&skv=2018-11-09&sig=ypP0U945n2gXyYayHuKzlyKNSmQOy8G8%2FZrPyrWX7Jw%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTQyODk0NSwibmJmIjoxNzkxNDI4NjQ1LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.uQg-4qkopksRx_3BgcanCIDO9C_nfLxEmXM7zsyYc6I&response-content-disposition=attachment%3B%20filename%3Dodbc-v2.6.0-win32-x64-napi-v8.tar.gz&response-content-type=application%2Foctet-stream failed, reason: self-signed certificate in certificate chain
+npm error [warn] Pre-built binaries not installable for odbc@2.6.0 and node@24.12.0 (node-v137 ABI, unknown) (falling back to source compile with node-gyp)
+npm error [warn] Hit error request to https://release-assets.githubusercontent.com/github-production-release-asset/146304236/***?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-08T03%3A39%3A14Z&rscd=attachment%3B+filename%3Dodbc-v2.6.0-win32-x64-napi-v8.tar.gz&rsct=application%2Foctet-stream&skoid=***&sktid=***&skt=2026-10-08T02%3A38%3A57Z&ske=2026-10-08T03%3A39%3A14Z&sks=b&skv=2018-11-09&sig=ypP0U945n2gXyYayHuKzlyKNSmQOy8G8%2FZrPyrWX7Jw%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTQyODk0NSwibmJmIjoxNzkxNDI4NjQ1LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.uQg-4qkopksRx_3BgcanCIDO9C_nfLxEmXM7zsyYc6I&response-content-disposition=attachment%3B%20filename%3Dodbc-v2.6.0-win32-x64-napi-v8.tar.gz&response-content-type=application%2Foctet-stream failed, reason: self-signed certificate in certificate chain
+npm error gyp info it worked if it ends with ok
+npm error gyp info using node-gyp@12.1.0
+npm error gyp info using node@24.12.0 | win32 | x64
+npm error gyp info ok 
+npm error gyp info it worked if it ends with ok
+npm error gyp info using node-gyp@12.1.0
+npm error gyp info using node@24.12.0 | win32 | x64
+npm error (node:24544) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+npm error (Use `node --trace-deprecation ...` to show where the warning was created)
+npm error gyp ERR! find Python 
+npm error gyp ERR! find Python Python is not set from command line or npm configuration
+npm error gyp ERR! find Python Python is not set from environment variable PYTHON
+npm error gyp ERR! find Python checking if the py launcher can be used to find Python 3
+npm error gyp ERR! find Python - executable path is ""
+npm error gyp ERR! find Python - "" could not be run
+npm error gyp ERR! find Python checking if "python3" can be used
+npm error gyp ERR! find Python - executable path is ""
+npm error gyp ERR! find Python - "" could not be run
+npm error gyp ERR! find Python checking if "python" can be used
+npm error gyp ERR! find Python - executable path is ""
+npm error gyp ERR! find Python - "" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python311\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python311\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Program Files\Python311\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Program Files\Python311\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python311-32\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python311-32\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Program Files\Python311-32\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Program Files\Python311-32\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Program Files (x86)\Python311-32\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Program Files (x86)\Python311-32\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python310\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python310\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Program Files\Python310\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Program Files\Python310\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python310-32\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python310-32\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Program Files\Python310-32\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Program Files\Python310-32\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Program Files (x86)\Python310-32\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Program Files (x86)\Python310-32\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python39\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python39\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Program Files\Python39\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Program Files\Python39\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python39-32\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python39-32\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Program Files\Python39-32\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Program Files\Python39-32\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Program Files (x86)\Python39-32\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Program Files (x86)\Python39-32\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python38\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python38\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Program Files\Python38\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Program Files\Python38\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python38-32\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Users\kidakorn.i\AppData\Local\Programs\Python\Python38-32\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Program Files\Python38-32\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Program Files\Python38-32\python.exe" could not be run
+npm error gyp ERR! find Python checking if Python is C:\Program Files (x86)\Python38-32\python.exe
+npm error gyp ERR! find Python - version is ""
+npm error gyp ERR! find Python - version is  - should be >=3.6.0
+npm error gyp ERR! find Python - THIS VERSION OF PYTHON IS NOT SUPPORTED
+npm error gyp ERR! find Python - "C:\Program Files (x86)\Python38-32\python.exe" could not be run
+npm error gyp ERR! find Python 
+npm error gyp ERR! find Python **********************************************************
+npm error gyp ERR! find Python You need to install the latest version of Python.
+npm error gyp ERR! find Python Node-gyp should be able to find and use Python. If not,
+npm error gyp ERR! find Python you can try one of the following options:
+npm error gyp ERR! find Python - Use the switch --python="C:\Path\To\python.exe"
+npm error gyp ERR! find Python (accepted by both node-gyp and npm)
+npm error gyp ERR! find Python - Set the environment variable PYTHON
+npm error gyp ERR! find Python - Set the npm configuration variable python:
+npm error gyp ERR! find Python npm config set python "C:\Path\To\python.exe"
+npm error gyp ERR! find Python For more information consult the documentation at:
+npm error gyp ERR! find Python https://github.com/nodejs/node-gyp#installation
+npm error gyp ERR! find Python **********************************************************
+npm error gyp ERR! find Python 
+npm error gyp ERR! configure error 
+npm error gyp ERR! stack Error: Could not find any Python installation to use
+npm error gyp ERR! stack at PythonFinder.fail (C:\Users\kidakorn.i\AppData\Roaming\npm\node_modules\npm\node_modules\node-gyp\lib\find-python.js:306:11)
+npm error gyp ERR! stack at PythonFinder.findPython (C:\Users\kidakorn.i\AppData\Roaming\npm\node_modules\npm\node_modules\node-gyp\lib\find-python.js:164:17)
+npm error gyp ERR! stack at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+npm error gyp ERR! stack at async configure (C:\Users\kidakorn.i\AppData\Roaming\npm\node_modules\npm\node_modules\node-gyp\lib\configure.js:27:18)
+npm error gyp ERR! stack at async run (C:\Users\kidakorn.i\AppData\Roaming\npm\node_modules\npm\node_modules\node-gyp\bin\node-gyp.js:81:18)
+npm error gyp ERR! System Windows_NT 10.0.26200
+npm error gyp ERR! command "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\kidakorn.i\\AppData\\Roaming\\npm\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js" "configure" "--fallback-to-build" "--module=d:\\I.KIDAKORN\\vscode\\odbc_as400\\node_modules\\odbc\\lib\\bindings\\napi-v8\\odbc.node" "--module_name=odbc" "--module_path=d:\\I.KIDAKORN\\vscode\\odbc_as400\\node_modules\\odbc\\lib\\bindings\\napi-v8" "--napi_version=10" "--node_abi_napi=napi" "--napi_build_version=8" "--node_napi_label=napi-v8"
+npm error gyp ERR! cwd d:\I.KIDAKORN\vscode\odbc_as400\node_modules\odbc
+npm error gyp ERR! node -v v24.12.0
+npm error gyp ERR! node-gyp -v v12.1.0
+npm error gyp ERR! not ok 
+npm error [error] build error
+npm error [error] stack Error: Failed to execute 'C:\Program Files\nodejs\node.exe C:\Users\kidakorn.i\AppData\Roaming\npm\node_modules\npm\node_modules\node-gyp\bin\node-gyp.js configure --fallback-to-build --module=d:\I.KIDAKORN\vscode\odbc_as400\node_modules\odbc\lib\bindings\napi-v8\odbc.node --module_name=odbc --module_path=d:\I.KIDAKORN\vscode\odbc_as400\node_modules\odbc\lib\bindings\napi-v8 --napi_version=10 --node_abi_napi=napi --napi_build_version=8 --node_napi_label=napi-v8' (1)
+npm error     at ChildProcess.<anonymous> (d:\I.KIDAKORN\vscode\odbc_as400\node_modules\@mapbox\node-pre-gyp\lib\util\compile.js:89:23)
+npm error     at ChildProcess.emit (node:events:508:28)
+npm error     at maybeClose (node:internal/child_process:1101:16)
+npm error     at ChildProcess._handle.onexit (node:internal/child_process:305:5)
+npm error [error] System Windows_NT 10.0.26200
+npm error [error] command "C:\\Program Files\\nodejs\\node.exe" "d:\\I.KIDAKORN\\vscode\\odbc_as400\\node_modules\\@mapbox\\node-pre-gyp\\bin\\node-pre-gyp" "install" "--fallback-to-build"
+npm error [error] cwd d:\I.KIDAKORN\vscode\odbc_as400\node_modules\odbc
+npm error [error] node -v v24.12.0
+npm error [error] node-pre-gyp -v v2.0.3
+npm error [error] not ok
+npm error A complete log of this run can be found in: C:\Users\kidakorn.i\AppData\Local\npm-cache\_logs\2026-10-08T03_06_17_436Z-debug-0.log
