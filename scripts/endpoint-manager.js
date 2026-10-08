@@ -7,7 +7,7 @@ const { parseArgs } = require('util');
 const { validateEndpoints } = require('../src/endpoints/registry');
 
 const DEFAULT_CONFIG = path.join(__dirname, '..', 'src', 'endpoints', 'endpoints.json');
-const ENDPOINT_KEYS = ['id', 'path', 'description', 'sqlTemplate', 'params'];
+const ENDPOINT_KEYS = ['id', 'path', 'description', 'sqlTemplate', 'orderBy', 'fetchAll', 'params'];
 const PARAM_KEYS = ['name', 'required', 'maxLength'];
 
 const USAGE = `Usage: node scripts/endpoint-manager.js <command> [options]

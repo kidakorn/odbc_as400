@@ -19,12 +19,12 @@ if (!LIBRARY_PATTERN.test(process.env.DB_LIBRARY)) {
   process.exit(1);
 }
 
-function readInt(name, fallback, min = 1) {
+function readInt(name, fallback, min = 1, max = Number.MAX_SAFE_INTEGER) {
   const raw = process.env[name];
   if (raw === undefined || raw === '') return fallback;
   const value = Number(raw);
-  if (!Number.isInteger(value) || value < min) {
-    console.error(`${name} must be an integer >= ${min}`);
+  if (!Number.isInteger(value) || value < min || value > max) {
+    console.error(`${name} must be an integer between ${min} and ${max}`);
     process.exit(1);
   }
   return value;
@@ -37,6 +37,8 @@ function deepFreeze(obj) {
   return Object.freeze(obj);
 }
 
+const rowLimit = readInt('ROW_LIMIT', 500, 1, 1000);
+const pageSize = readInt('PAGE_SIZE', 100, 1, rowLimit);
 const poolInitial = readInt('DB_POOL_INITIAL', 1);
 const poolMax = readInt('DB_POOL_MAX', 3);
 if (poolInitial > poolMax) {
@@ -45,10 +47,15 @@ if (poolInitial > poolMax) {
 }
 
 const config = deepFreeze({
-  env: process.env.NODE_ENV || 'development',
+  env: process.env.NODE_ENV || 'production',
   port: readInt('PORT', 3099),
   corsOrigin: process.env.CORS_ORIGIN || false,
-  rowLimit: readInt('ROW_LIMIT', 500),
+  rowLimit,
+  pageSize,
+  rateLimit: {
+    windowMs: readInt('RATE_LIMIT_WINDOW_MS', 60000),
+    max: readInt('RATE_LIMIT_MAX', 120),
+  },
   db: {
     driver: process.env.DB_DRIVER || 'IBM i Access ODBC Driver',
     host: process.env.DB_HOST,
@@ -57,6 +64,7 @@ const config = deepFreeze({
     library: process.env.DB_LIBRARY,
     poolInitial,
     poolMax,
+    queueMax: readInt('DB_QUEUE_MAX', 50, 0, 1000),
     loginTimeout: readInt('DB_LOGIN_TIMEOUT', 10),
     queryTimeout: readInt('DB_QUERY_TIMEOUT', 15),
   },

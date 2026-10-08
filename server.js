@@ -15,6 +15,10 @@ async function start() {
   const server = app.listen(config.port, () => {
     console.log(`IWS API listening on http://localhost:${config.port}`);
   });
+  server.on('error', (err) => {
+    console.error('Server error:', err.message);
+    process.exit(1);
+  });
 
   let shuttingDown = false;
   const shutdown = (signal) => {
@@ -26,8 +30,13 @@ async function start() {
     setTimeout(() => process.exit(1), SHUTDOWN_TIMEOUT_MS).unref();
 
     server.close(async () => {
-      await pool.close();
-      process.exit(0);
+      try {
+        await pool.close();
+        process.exit(0);
+      } catch (err) {
+        console.error('Pool close failed:', err.message);
+        process.exit(1);
+      }
     });
   };
 

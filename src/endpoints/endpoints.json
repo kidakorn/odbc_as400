@@ -2,17 +2,30 @@
   {
     "id": "mdvice-by-key",
     "path": "/api/web/services/MDVICE",
-    "description": "Get device master record by device code",
+    "description": "GET DEVICE NAME MASTER BY DEVICE CODE",
     "sqlTemplate": "SELECT * FROM MDVICE WHERE CDDEVC = :cddevc",
     "params": [
-      { "name": "cddevc", "required": true, "maxLength": 10 }
+      {
+        "name": "cddevc",
+        "required": true,
+        "maxLength": 10
+      }
     ]
   },
   {
     "id": "wgpgbl-all",
     "path": "/api/web/services/WGPGBL",
-    "description": "Get all global setting/branch rows",
+    "description": "GET ALL DOWNLOAD GROUP PACKAGE BALANCE REPORT",
     "sqlTemplate": "SELECT * FROM WGPGBL",
+    "fetchAll": true,
+    "params": []
+  },
+  {
+    "id": "mgpgst-all",
+    "path": "/api/web/services/MGPGST",
+    "description": "GET ALL GROUP PACKAGE STOCK MASTER",
+    "sqlTemplate": "SELECT * FROM MGPGST",
+    "orderBy": "CDPAKG",
     "params": []
   }
 ]

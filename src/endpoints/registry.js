@@ -3,6 +3,8 @@
 const FORBIDDEN_KEYWORD = /\b(INSERT|UPDATE|DELETE|MERGE|DROP|ALTER|CREATE|TRUNCATE|GRANT|REVOKE|CALL)\b/i;
 const PLACEHOLDER = /:([A-Za-z_][A-Za-z0-9_]*)/g;
 const NAME_PATTERN = /^[A-Za-z_][A-Za-z0-9_]*$/;
+const DEFAULT_MAX_LENGTH = 100;
+const ORDER_BY_PATTERN = /^[A-Za-z_][A-Za-z0-9_]*(\s+(ASC|DESC))?(\s*,\s*[A-Za-z_][A-Za-z0-9_]*(\s+(ASC|DESC))?)*$/i;
 
 // Runs at startup so a bad endpoint config stops boot instead of failing a live request.
 function validateEndpoints(endpoints) {
@@ -40,6 +42,18 @@ function validateEndpoints(endpoints) {
     if (sql.includes(';')) errors.push(`${label}: sqlTemplate must not contain ';'`);
     const forbidden = sql.match(FORBIDDEN_KEYWORD);
     if (forbidden) errors.push(`${label}: keyword ${forbidden[0].toUpperCase()} is not allowed`);
+    if (ep.fetchAll !== undefined && typeof ep.fetchAll !== 'boolean') {
+      errors.push(`${label}: fetchAll must be boolean`);
+    }
+    if (ep.fetchAll === true && ep.orderBy !== undefined) {
+      errors.push(`${label}: fetchAll cannot be combined with orderBy`);
+    }
+    if (ep.orderBy !== undefined) {
+      if (typeof ep.orderBy !== 'string' || !ORDER_BY_PATTERN.test(ep.orderBy.trim())) {
+        errors.push(`${label}: orderBy must be column names with optional ASC/DESC`);
+      }
+      if (/\bORDER\s+BY\b/i.test(sql)) errors.push(`${label}: sqlTemplate must not contain ORDER BY when orderBy is set`);
+    }
 
     const params = ep.params ?? [];
     if (!Array.isArray(params)) {
@@ -74,7 +88,10 @@ function validateEndpoints(endpoints) {
 
   return endpoints.map((ep) => Object.freeze({
     ...ep,
-    params: Object.freeze((ep.params ?? []).map((p) => Object.freeze({ ...p }))),
+    params: Object.freeze((ep.params ?? []).map((p) => Object.freeze({
+      ...p,
+      maxLength: p.maxLength ?? DEFAULT_MAX_LENGTH,
+    }))),
   }));
 }
 

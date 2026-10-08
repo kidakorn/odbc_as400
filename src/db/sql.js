@@ -23,6 +23,14 @@ function withRowLimit(sql, limit) {
   return `${sql.replace(/;\s*$/, '')} FETCH FIRST ${limit} ROWS ONLY`;
 }
 
+// Integers are interpolated like the row limit; orderBy is validated in the registry.
+function withPaging(sql, orderBy, limit, offset) {
+  if (!Number.isInteger(limit) || limit < 1 || !Number.isInteger(offset) || offset < 0) {
+    throw new TypeError('limit must be a positive integer and offset a non-negative integer');
+  }
+  return `${sql.replace(/;\s*$/, '')} ORDER BY ${orderBy} OFFSET ${offset} ROWS FETCH FIRST ${limit} ROWS ONLY`;
+}
+
 // CHAR columns are space-padded; BigInt would make JSON.stringify throw.
 function normalizeRow(row) {
   const out = {};
@@ -34,4 +42,4 @@ function normalizeRow(row) {
   return out;
 }
 
-module.exports = { toPositional, withRowLimit, normalizeRow };
+module.exports = { toPositional, withRowLimit, withPaging, normalizeRow };

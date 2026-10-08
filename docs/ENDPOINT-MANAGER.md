@@ -75,6 +75,8 @@ Exit code: `0` สำเร็จ, `1` ผิดพลาด (ไฟล์จะ
 | `description` | ไม่ | string | คำอธิบายสำหรับคนอ่าน ไม่มีผลต่อการทำงาน |
 | `sqlTemplate` | ใช่ | string | ต้องขึ้นต้นด้วย `SELECT` ห้ามมี `;` และห้ามมี keyword `INSERT`, `UPDATE`, `DELETE`, `MERGE`, `DROP`, `ALTER`, `CREATE`, `TRUNCATE`, `GRANT`, `REVOKE`, `CALL` |
 | `params` | ไม่ | array | ถ้าไม่ระบุ ถือเป็น `[]` |
+| `orderBy` | ไม่ | string | รายชื่อคอลัมน์ (คั่นด้วย `,`) พร้อม `ASC`/`DESC` ได้ ทำให้ endpoint แบ่งหน้าด้วย `limit`/`offset` ได้ ห้ามมี `ORDER BY` ใน `sqlTemplate` |
+| `fetchAll` | ไม่ | boolean | `true` = ไม่จำกัดจำนวน row (ไม่มี `FETCH FIRST`) ใช้ร่วมกับ `orderBy` ไม่ได้ |
 
 Field ของแต่ละ item ใน `params`:
 
@@ -82,7 +84,7 @@ Field ของแต่ละ item ใน `params`:
 |-------|----------|--------|-----|
 | `name` | ใช่ | string | ตัวอักษร ตัวเลข หรือ `_` และขึ้นต้นด้วยตัวอักษรหรือ `_` |
 | `required` | ไม่ | boolean | ถ้า `true` และ client ไม่ส่งค่า (หรือส่งค่าว่าง) จะได้ 400 |
-| `maxLength` | ไม่ | integer > 0 | ความยาวสูงสุดของค่าที่ client ส่งมา |
+| `maxLength` | ไม่ | integer > 0 | ความยาวสูงสุดของค่าที่ client ส่งมา (default `100`) |
 
 กฎเพิ่มเติม:
 

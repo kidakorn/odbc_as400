@@ -16,7 +16,7 @@ function errorHandler(err, req, res, next) {
 
   // Unexpected errors may carry driver internals, so they are logged and never returned as-is.
   console.error(err.odbcErrors || err);
-  const message = config.env === 'production' ? 'Internal server error' : err.message;
+  const message = config.env === 'development' ? err.message : 'Internal server error';
   return res.status(500).json({ success: false, error: message });
 }
 
