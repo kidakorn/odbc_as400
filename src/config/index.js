@@ -49,7 +49,9 @@ if (poolInitial > poolMax) {
 const config = deepFreeze({
   env: process.env.NODE_ENV || 'production',
   port: readInt('PORT', 3099),
-  corsOrigin: process.env.CORS_ORIGIN || false,
+  corsOrigin: process.env.CORS_ORIGIN
+    ? process.env.CORS_ORIGIN.split(',').map((o) => o.trim()).filter(Boolean)
+    : false,
   rowLimit,
   pageSize,
   rateLimit: {
